@@ -2,8 +2,9 @@ from django.db import models
 
 # Create your models here.
 class SocialGroup(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
     social_id = models.IntegerField(null=True, blank=True)
+    processed = models.BooleanField(default=False)
 
     def __unicode__(self):
         return unicode("%s"%(self.name))
