@@ -15,7 +15,7 @@ class SocialUser(models.Model):
     sex = models.IntegerField(null=True, blank=True)
     city_name = models.CharField(max_length=255)
     city_id = models.IntegerField(null=True, blank=True)
-    social_id = models.IntegerField(null=True, blank=True)
+    social_id = models.BigIntegerField(null=True, blank=True)
     country_name = models.CharField(max_length=255)
     country_id = models.IntegerField(null=True, blank=True)
     social_groups = models.ManyToManyField(SocialGroup)    

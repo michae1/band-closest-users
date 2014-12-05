@@ -6,7 +6,7 @@ class SocialUserAdmin(admin.ModelAdmin):
     list_filter = ()
 
 class SocialGroupAdmin(admin.ModelAdmin):
-    list_display = ('name', 'social_id')
+    list_display = ('name', 'processed')
     list_filter = ()
     
     # search_fields = ('email',)

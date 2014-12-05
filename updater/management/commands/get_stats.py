@@ -50,7 +50,7 @@ def get_possible_user(possible_users,vector_tpl,ref_vectors,good_similarity, tes
             if max_sim and max_sim<similarity:
                 max_sim = similarity    
 
-        print max_sim        
+        # print max_sim        
         if max_sim > good_similarity:
             candidate_users.append(pu.social_id) 
 
@@ -89,10 +89,10 @@ class Command(NoArgsCommand):
 
         test_candidate_users = get_possible_user(test_possible_users,vector_tpl,test_ref_vectors,good_similarity,test_run=True)    
         print "eff (of 163):%s"%len(test_candidate_users)
-        sys.exit()
+        # sys.exit()
 
 
-        ref_users = SocialUser.objects.annotate(count=Count('social_groups')).filter(social_groups__in=[1,], count__gt=2)
+        ref_users = SocialUser.objects.annotate(count=Count('social_groups')).filter(social_groups__in=[1,], count__gt=3)
         possible_users = SocialUser.objects.annotate(count=Count('social_groups')).exclude(social_groups__in=[1,]).filter(count__gt=2,city_id=314)
         print "ref users: %s"%len(ref_users)
         print "possible users: %s"%len(possible_users)

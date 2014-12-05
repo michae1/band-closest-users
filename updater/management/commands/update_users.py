@@ -62,4 +62,7 @@ class Command(NoArgsCommand):
                     user_obj.country_id = user["country"]["id"]
                 user_obj.save()
 
+            group.processed = 1
+            group.save()    
+
 
