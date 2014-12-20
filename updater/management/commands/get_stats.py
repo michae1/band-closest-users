@@ -9,7 +9,6 @@ from django.db.models import Count
 import math
 
 def cosine_similarity(v1,v2):
-    "compute cosine similarity of v1 to v2: (v1 dot v1)/{||v1||*||v2||)"
     sumxx, sumxy, sumyy = 0, 0, 0
     for i in range(len(v1)):
         x = v1[i]; y = v2[i]
@@ -107,11 +106,7 @@ class Command(NoArgsCommand):
 
         print "users"
         print len(candidate_users)
-        # (for) get ref users vectors
-        # for each possible candidate users get vector, 
-        # get distances list
-        # get median or minimum distance save 
-        # return users with distance less than x
+
         with open('users.txt', 'wb') as outfile:
             for item in candidate_users:
                 outfile.write("%s\n" % item)

@@ -39,7 +39,7 @@ class Command(NoArgsCommand):
             sys.exit()    
 
         for group in groups:        
-            print "doing group %s"%group.name
+            print "Processing group %s"%group.name
             url = 'https://api.vk.com/method/groups.getMembers?group_id=%s&v=5.16&offset=0&count=1000&fields=sex,bdate,city,country,photo_200_orig,photo_max_orig&access_token='%group.name
 
             r = requests.get(url)
